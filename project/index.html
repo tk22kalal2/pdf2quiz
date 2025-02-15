@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Quiz Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>PDF Quiz Generator</h1>
+    <p>Upload a PDF to generate multiple choice questions.</p>
+    
+    <input type="file" id="pdfUpload" accept="application/pdf">
+    <div class="button-group">
+      <button id="generateEasyQuiz" class="btn-easy">Generate Easy Quiz</button>
+      <button id="generateHardQuiz" class="btn-hard">Generate Hard Quiz</button>
+    </div>
+
+    <div class="processing-status" id="processingStatus">
+      <div class="progress-steps">
+        <div class="step" data-step="1">1</div>
+        <div class="step" data-step="2">2</div>
+        <div class="step" data-step="3">3</div>
+      </div>
+      <div class="processing-text" id="processingText">Processing PDF...</div>
+    </div>
+
+    <div class="success-message" id="successMessage">
+      Processing complete! Your quiz is ready.
+    </div>
+
+    <div id="output" style="display: none;">
+      <p id="textResult"></p>
+    </div>
+
+    <div id="mcqContainer" style="display: none;">
+      <h2>Quiz Questions</h2>
+      <div id="mcqResult"></div>
+      <button id="nextQuestion" style="display: none;">Next Question</button>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v4.0.2/dist/tesseract.min.js"></script>
+  <script type="module" src="src/script.js"></script>
+</body>
+</html>
