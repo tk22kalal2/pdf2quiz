@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = "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";
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 export class APIClient {
